@@ -1,0 +1,21 @@
+//Print n natural numbers using recursion
+import java.util.Scanner;
+public class abc {
+    void printNoByRec(int n){
+        if(n==1)
+        {
+            System.out.print("1 ");
+            return;
+        }
+        printNoByRec(n-1);
+        System.out.print(n+" ");
+    }
+    public static void main(String[] args)
+    {
+         Scanner sc=new Scanner(System.in);
+         abc obj=new abc();
+         System.out.println("enter the number n: ");
+         int n = sc.nextInt();
+         obj.printNoByRec(n);
+    }
+}
