@@ -1,0 +1,27 @@
+//Print the Factorial of n using recursion
+import java.util.Scanner;
+public class abc {
+    int printFac(int n){
+
+        if(n==0)
+        {
+            return 1;
+
+        }
+        int small=printFac(n-1);
+        int ans=n*small;
+        return ans;
+
+
+
+
+    }
+    public static void main(String[] args)
+    {
+         Scanner sc=new Scanner(System.in);
+         abc obj=new abc();
+         System.out.println("enter the number n: ");
+         int n = sc.nextInt();
+        System.out.println("factorial of "+n+" is: "+obj.printFac(n));
+    }
+}
