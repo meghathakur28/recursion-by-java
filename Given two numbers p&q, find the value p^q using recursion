@@ -1,0 +1,23 @@
+//Given two numbers p&q, find the value p^q
+import java.util.Scanner;
+public class abc {
+    int powerPQ(int p,int q){
+        if(q<1)
+        {
+            return 1;
+        }
+        int smallAns=powerPQ(p,q-1);
+        int ans=smallAns*p;
+        return ans;
+    }
+    public static void main(String[] args)
+    {
+         Scanner sc=new Scanner(System.in);
+         abc obj=new abc();
+         System.out.println("enter the number p: ");
+         int p = sc.nextInt();
+        System.out.println("enter the power q");
+        int q=sc.nextInt();
+         System.out.println(obj.powerPQ(p,q));
+    }
+}
