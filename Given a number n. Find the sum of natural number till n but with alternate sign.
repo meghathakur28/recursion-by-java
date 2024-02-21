@@ -1,0 +1,23 @@
+//Given a number n. Find the sum of natural number till n but with alternate sign.
+import java.util.Scanner;
+public class abc {
+    int Sum(int p) {
+        if (p <= 1) {
+            return 1;
+        }
+        if (p % 2 == 0) {
+            return Sum(p - 1)- p;
+        } else
+        {
+            return Sum(p-1)+p;
+        }
+    }
+    public static void main(String[] args)
+    {
+         Scanner sc=new Scanner(System.in);
+         abc obj=new abc();
+         System.out.println("enter the number p: ");
+         int p = sc.nextInt();
+        System.out.println(obj.Sum(p));
+        }
+    }
