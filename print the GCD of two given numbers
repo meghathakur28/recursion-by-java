@@ -1,0 +1,36 @@
+//print the GCD of two given numbers
+import java.util.Scanner;
+public class abc {
+    int GCD(int n,int m) {
+        int small=0;
+        int large=0;
+        if(n<m)
+        {
+            small=n;
+            large=m;
+        }
+        else
+        {
+            small=m;
+            large=n;
+        }
+        if(large%small==0)
+        {
+            return small;
+        }
+        return GCD(small,large%small);
+
+
+
+    }
+    public static void main(String[] args)
+    {
+         Scanner sc=new Scanner(System.in);
+         abc obj=new abc();
+         System.out.println("enter the 1st number:  ");
+         int n = sc.nextInt();
+        System.out.println("enter the 2nd number: ");
+        int m=sc.nextInt();
+        System.out.println(obj.GCD(n,m));
+        }
+    }
