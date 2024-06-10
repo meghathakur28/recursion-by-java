@@ -1,0 +1,22 @@
+import java.util.*;
+//sum of n natural number
+public class recursion_promlem {
+    int sum(int n)
+    {
+        if(n==1)
+        {
+            return 1;
+        }
+         int temp=sum(n-1)+n;
+         return temp;
+    }
+    public static void main(String[] args) {
+        Scanner sc= new Scanner(System.in);
+        System.out.println("Enter the n: ");
+        int n=sc.nextInt();
+        recursion_promlem obj=new recursion_promlem();
+        System.out.println("The sum is: "+obj.sum(n));
+
+    }
+    
+}
