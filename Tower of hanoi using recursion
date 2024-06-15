@@ -1,0 +1,26 @@
+import java.util.*;
+//Tower of hanoi using recursion
+public class recursion_promlem {
+    static void toh(int n,int A,int C,int B)
+    {
+        if(n==1)
+        {
+            System.out.println("Move block "+n+" from rod "+A+" to rod "+C);
+            return;
+        }
+        toh(n-1,A,B,C);
+        System.out.println("Move block "+n+" from rod "+A+" to rod "+C);
+        toh(n-1,B,C,A);
+    }
+    public static void main(String[] args) {
+        Scanner sc= new Scanner(System.in);
+        System.out.println("Enter the n: ");
+        int n=sc.nextInt();
+        int A=1;
+        int B=2;
+        int C=3;
+        toh(n,A,C,B);
+
+    }
+    
+}
