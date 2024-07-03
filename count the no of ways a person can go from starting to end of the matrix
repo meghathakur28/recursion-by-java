@@ -1,0 +1,27 @@
+import java.util.*;
+class HelloWorld {
+    public static int maze(int sr,int sc,int er,int ec)
+    {
+        if(sr>er||sc>ec)
+        {
+            return 0;
+        }
+        if(er==sr&&sc==ec)
+        {
+            return 1;
+        }
+        int right=maze(sr,sc+1,er,ec);
+        int down=maze(sr+1,sc,er,ec);
+        int total_ways= down+right;
+        return total_ways;
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the no of rows and columns: ");
+        int rows=sc.nextInt();
+        int col=sc.nextInt();
+        int count=maze(1,1,rows,col);
+        System.out.println("The no of ways: ");
+        System.out.println(count);
+    }
+}
