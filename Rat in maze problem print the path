@@ -1,0 +1,25 @@
+import java.util.*;
+class HelloWorld {
+    public static void maze(int sr,int sc,int er,int ec,String s)
+    {
+        if(sr>er||sc>ec)
+        {
+            return;
+        }
+        if(er==sr&&sc==ec)
+        {
+            System.out.println(s);
+            return;
+        }
+        maze(sr,sc+1,er,ec,s+"R");
+        maze(sr+1,sc,er,ec,s+"D");
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the no of rows and columns: ");
+        int rows=sc.nextInt();
+        int col=sc.nextInt();
+        String s="";
+        maze(1,1,rows,col,s);
+    }
+}
